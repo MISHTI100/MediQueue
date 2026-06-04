@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   // Replace with your actual backend URL
-  baseURL: "http://localhost:5000/api", 
+  baseURL: "https://mediqueue-5q7s.onrender.com", 
 });
 
 // Optional: Add an interceptor to automatically add the token to every request
