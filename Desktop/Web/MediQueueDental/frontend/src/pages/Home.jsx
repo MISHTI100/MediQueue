@@ -18,7 +18,7 @@ function Home() {
       >
         <h1
           style={{
-            fontSize: "45px",
+            fontSize: "35px",
             marginBottom: "10px",
             fontWeight: "bold"
           }}
