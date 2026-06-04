@@ -58,10 +58,15 @@ function Signup() {
           width: "300px"
         }}
       >
-        <h1>
-          🏥 MediQueue Signup
-        </h1>
-
+        <h1
+  style={{
+    fontSize: "40px",
+    textAlign: "center",
+    marginBottom: "20px",
+  }}
+>
+  🏥 MediQueue Signup
+</h1>
         <input
           type="text"
           placeholder="Full Name"
