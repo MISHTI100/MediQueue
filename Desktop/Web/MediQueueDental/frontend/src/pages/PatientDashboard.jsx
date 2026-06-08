@@ -29,18 +29,20 @@ const profileName =
 
 useEffect(() => {
 
-  const tokenId =
+  const savedToken =
     localStorage.getItem(
-      "myTokenId"
+      "latestToken"
     );
 
-  if (!tokenId) return;
+  if (!savedToken) return;
 
-  loadMyToken(
-    tokenId
+  setMyToken(
+    JSON.parse(savedToken)
   );
 
 }, []);
+
+
 
 const loadMyToken =
 async (tokenId) => {
