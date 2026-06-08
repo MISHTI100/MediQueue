@@ -120,6 +120,14 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  const interval = setInterval(() => {
+    loadQueue();
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, []);
+
+useEffect(() => {
 
   const interval =
     setInterval(() => {
@@ -168,16 +176,20 @@ console.log(
         return;
       }
 
-      if (
-  myToken &&
-  myToken.status ===
-    "In Consultation"
-) {
+      if (calledPatient) {
 
   setNotification(
-    `🔔 Doctor Is Ready To See You. Token ${myToken.tokenNumber}`
+    `🔔 Doctor Is Ready To See You. Token ${calledPatient.tokenNumber}`
   );
 
+  if (Notification.permission === "granted") {
+    new Notification(
+      "MediQueue Alert",
+      {
+        body: `Doctor is ready to see you. Token ${calledPatient.tokenNumber}`
+      }
+    );
+  }
 }
 
     }, 2000);
