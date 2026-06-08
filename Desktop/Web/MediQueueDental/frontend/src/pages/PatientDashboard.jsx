@@ -24,6 +24,9 @@ useState(null);
 const [notification, setNotification] =
 useState("");
 
+const profileName =
+  localStorage.getItem("name");
+
 useEffect(() => {
 
   const tokenId =
@@ -211,17 +214,22 @@ const bookAppointment = async () => {
   try {
 
     await API.post(
-      "/patients/request",
-      {
-        patientName,
-        phone,
-        age,
-        symptoms,
-        department,
-        doctorName:
-          selectedDoctor
-      }
-    );
+  "/patients/request",
+  {
+    patientName,
+    phone,
+    age,
+    symptoms,
+    department,
+    doctorName:
+      selectedDoctor,
+
+    userEmail:
+      localStorage.getItem(
+        "email"
+      )
+  }
+);
 
     alert(
       `Appointment Request Sent To Reception For ${selectedDoctor}`
@@ -255,6 +263,17 @@ const bookAppointment = async () => {
       >
         🧑 Patient Dashboard
       </h1>
+      <div
+  style={{
+    background: "white",
+    padding: "15px",
+    borderRadius: "10px",
+    marginBottom: "20px",
+    textAlign: "center"
+  }}
+>
+  <h2>👤 {localStorage.getItem("name")}</h2>
+</div>
       <div
   style={{
     background: "white",

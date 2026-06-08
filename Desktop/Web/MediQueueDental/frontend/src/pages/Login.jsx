@@ -37,6 +37,11 @@ function Login() {
         res.data.name
       );
 
+      localStorage.setItem(
+        "email",
+        res.data.email
+      );
+
       if (
         res.data.role === "Admin"
       ) {

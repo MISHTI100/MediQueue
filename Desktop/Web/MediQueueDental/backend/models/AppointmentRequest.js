@@ -9,6 +9,7 @@ new mongoose.Schema(
   symptoms: String,
   department: String,
   doctorName: String,
+  userEmail: String,
 
   status: {
     type: String,

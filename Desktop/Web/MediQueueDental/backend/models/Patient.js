@@ -10,6 +10,8 @@ new mongoose.Schema(
 
   phone: String,
 
+  userEmail: String,
+
   age: Number,
 
   symptoms: String,

@@ -6,12 +6,13 @@ exports.registerPatientAndGenerateToken = async (req, res) => {
   try {
 
     const {
-      patientName,
-      phone,
-      age,
-      priority,
-      doctorName
-    } = req.body;
+  patientName,
+  phone,
+  age,
+  priority,
+  doctorName,
+  userEmail
+} = req.body
 
     // Check doctor
     const doctor = await Doctor.findOne({
@@ -47,11 +48,12 @@ exports.registerPatientAndGenerateToken = async (req, res) => {
 
     // Create patient
     const patient = await Patient.create({
-      patientName,
-      phone,
-      age,
-      priority
-    });
+  patientName,
+  phone,
+  age,
+  priority,
+  userEmail
+});
 
     // Generate token
     const count =
